@@ -1,1 +1,1 @@
-console.log('Hola WordPress');
+console.log('Hola Wordpress')
