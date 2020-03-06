@@ -1,0 +1,64 @@
+# DIRECTORIO QUE PUEDE SER CREADO POR WORDPRESS O POR ALGUN PLUGIN
+wp-content/blogs.dir/
+# CARPETA QUE WORDPRESS USA PARA LAS ACTUALIZACIONES
+wp-content/upgrade/ 
+# PLUGINS DE BACKUPS DE COPIAS DE SEGURIDAD
+wp-content/backup-db/
+# CACHE CREADOS EN EL SITIO
+wp-content/advance-cache.php
+wp-content/wp-cache-config.php
+
+wp-content/cache/
+wp-content/et-cache/
+
+wp-content/backups/
+wp-content/mu-plugins/pagely*
+
+wp-content/wphb-cache
+wp-content/wphb-logs
+wp-content/wpo-cache
+wp-content/wp-reset-backups
+# wp-content/uploads
+
+# ARCHIVOS DE MEDIOS DE WORDPRESS
+wp-content/index.php
+wp-content/languages
+wp-content/ewww
+# ARCHIVO QUE LE DICE A GOOGLE LOS ENLACES A INDEXAR
+site.map.xml
+# ARCHIVOS DE .LOG
+*.log
+# ARCHIVOS DE WORDPRESS
+/wp-*.php
+/index.php
+license.txt
+readme.html
+wp-admin/
+wp-includes/
+xmlrpc.php
+wp-config-hosting.php
+db-config.php
+sitemap.xml.gz
+# ARCHIVO QUE PODRIA CREAR LOS SITEMAS OPERATIVOS MAC
+.DS_Store
+# ARCHIVO QUE CREAN ALGUNOS EDITORES DE TEXTO
+.idea/
+# ARCHIVO HTACCES
+.htaccess
+# CARPETAS DEL CORE DE WORDPRESS
+wp-admin
+wp-includes
+# OTROS
+cgi-bin
+default.html
+default.php
+phpinfo.php
+index2.html
+400.shtml
+401.shtml
+403.shtml
+404.shtml
+500.shtml
+500.php
+wp-snapshots/
+stats/
