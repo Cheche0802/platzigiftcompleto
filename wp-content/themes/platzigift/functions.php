@@ -27,6 +27,10 @@ function assets(){
     wp_enqueue_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', array('jquery', 'popper'), '4.4.1', true );
 
     wp_enqueue_script( 'custom', get_template_directory_uri().'/assets/js/custom.js', '','1.0', true );
+
+    wp_localize_script( 'custom', 'pg', array( 
+        'ajaxurl' => admin_url( 'admin-ajax.php' )
+    ) );
 }
 
 add_action('wp_enqueue_scripts', 'assets');
@@ -93,6 +97,49 @@ function pgRegisterTax(){
 }
 
 add_action( 'init', 'pgRegisterTax' );
+
+
+
+function pgFiltroProductos(){
+
+    $args = array(
+        'post_type' => 'producto',
+        'post_per_page' => -1,
+        'order' => 'asc',
+        'orderby' => 'title',
+        'post__not_in'  => array(
+            $post->ID),
+        'orderby' => 'title',
+    ); 
+    if ($_POST['categoria']) {
+        $argc['tax_query'] = array(
+            array(
+                'taxonomy' => 'categoria-productos',
+                'field' => 'slug',
+                'terms' => $taxonomy[0]->slug,
+            ),
+        );
+    }
+    
+    $producto = new WP_Query( $args ); 
+
+    if ($producto->have_posts()) {
+        $return = array();
+        while($producto->have_posts()) { 
+            $producto->the_post();
+            $return[]= array(
+                'imagen' => get_the_post_thumbnail(get_the_ID(), 'largue'),
+                'link'  => get_the_permalink(),
+                'titulo' => get_the_title()
+            );
+        }
+        wp_send_json( $return );
+    }
+}
+add_action( "wp_ajax_pgFiltroProductos", "pgFiltroProductos"  );
+add_action( "wp_ajax_nopriv_pgFiltroProductos", "pgFiltroProductos"  );
+
+
 /*
 functionpgCutEscerpt( $length ){
 	$length = 20,

@@ -7,11 +7,11 @@
             ?>
                 <h1 class='my-5'><?php the_title() ?></h1>
                 <?php $taxonomy = get_the_terms(get_the_ID(), 'categoria-productos'); ?>
-                <div class="row my-5">
+                <div class="row text-center justify-content my-5">
                     <div class="col-md-4 col 12">
                         <?php the_post_thumbnail('large'); ?>
                     </div>
-                    <div class="col-md-8 col 12">
+                    <div class="col-md-8 col 12 text-center justify-content">
                         <?php the_content(); ?>
                     </div> 
                 </div>

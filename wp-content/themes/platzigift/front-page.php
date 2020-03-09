@@ -25,7 +25,7 @@
                 </select>
             </div>
         </div>
-        <div class="row my-5">
+        <div id="resultado-productos" class="row text-center justify-content my-5">
         <?php 
 
             $args = array (
