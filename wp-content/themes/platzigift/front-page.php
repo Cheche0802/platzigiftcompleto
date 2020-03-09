@@ -31,7 +31,7 @@
             <div class="col-4">
                     <figure>
                         <?php the_post_thumbnail( 'large'); ?>
-                        <h4 class= 'my-3 text-center'>
+                        <h4 class= "my-3 text-center">
                             <a href="<?php the_permalink();?>"><?php the_title(); ?></a>
                         </h4>
                     </figure>
