@@ -74,3 +74,10 @@ function productos_type(){
 }
 
 add_action( 'init', 'productos_type');
+
+/*
+functionpgCutEscerpt( $length ){
+	$length = 20,
+	return $length ;
+}
+add_filter( 'excerpt_length', 'pgCutEscerpt');
