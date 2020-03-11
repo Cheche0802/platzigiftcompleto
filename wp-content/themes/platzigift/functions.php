@@ -116,7 +116,7 @@ function pgFiltroProductos(){
             array(
                 'taxonomy' => 'categoria-productos',
                 'field' => 'slug',
-                'terms' => $taxonomy[0]->slug,
+                'terms' => $_POST['categoria'],
             ),
         );
     }
@@ -138,6 +138,12 @@ function pgFiltroProductos(){
 }
 add_action( "wp_ajax_pgFiltroProductos", "pgFiltroProductos"  );
 add_action( "wp_ajax_nopriv_pgFiltroProductos", "pgFiltroProductos"  );
+
+
+
+
+
+
 
 
 /*
